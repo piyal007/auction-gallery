@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DynamicIcon } from 'lucide-react/dynamic';
+import { ToastContainer, toast } from 'react-toastify';
 
 const MainSection = () => {
     const [items, setItems] = useState([]);
@@ -16,8 +17,10 @@ const MainSection = () => {
         const isFavorite = favorites.some(fav => fav.id === item.id);
         if (isFavorite) {
             setFavorites(favorites.filter(fav => fav.id !== item.id));
+            toast.error('Item removed from favorites');
         } else {
             setFavorites([...favorites, item]);
+            toast.success('Item added to favorites');
         }
     };
 
@@ -29,6 +32,7 @@ const MainSection = () => {
     };
     return (
         <div className="bg-[#EBF0F5] py-16">
+            <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} closeOnClick pauseOnHover theme="light" />
             <div className="w-11/12 mx-auto">
                 <div>
                     <h2 className="text-3xl font-semibold mb-2">Active Auctions</h2>
