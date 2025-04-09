@@ -70,17 +70,26 @@ const MainSection = () => {
                                             <span className="text-blue-600 font-medium">{item.timeLeft}</span>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <button
-                                                onClick={() => toggleFavorite(item)}
-                                                className="btn btn-ghost btn-circle hover:bg-gray-100"
-                                            >
-                                                <DynamicIcon
-                                                    name="heart"
-                                                    className={`h-6 w-6 transition-colors ${favorites.some(fav => fav.id === item.id) ? 'text-red-500 fill-current' : 'text-gray-600 hover:text-red-500'}`}
-                                                    fill={favorites.some(fav => fav.id === item.id) ? 'currentColor' : 'none'}
-                                                    strokeWidth={2}
-                                                />
-                                            </button>
+                                            <div className={`inline-block ${favorites.some(fav => fav.id === item.id) ? 'cursor-not-allowed' : ''}`}>
+                                                <button
+                                                    onClick={() => !favorites.some(fav => fav.id === item.id) && toggleFavorite(item)}
+                                                    className={`btn btn-ghost btn-circle ${favorites.some(fav => fav.id === item.id)
+                                                            ? 'opacity-50'
+                                                            : 'hover:bg-gray-100'
+                                                        }`}
+                                                    disabled={favorites.some(fav => fav.id === item.id)}
+                                                >
+                                                    <DynamicIcon
+                                                        name="heart"
+                                                        className={`h-6 w-6 transition-colors ${favorites.some(fav => fav.id === item.id)
+                                                                ? 'text-red-500 fill-current'
+                                                                : 'text-gray-600 hover:text-red-500'
+                                                            }`}
+                                                        fill={favorites.some(fav => fav.id === item.id) ? 'currentColor' : 'none'}
+                                                        strokeWidth={2}
+                                                    />
+                                                </button>
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}
@@ -121,9 +130,9 @@ const MainSection = () => {
                                                 </div>
                                                 <button
                                                     onClick={() => toggleFavorite(item)}
-                                                    className="text-gray-400 hover:text-red-500 transition-colors"
+                                                    className="text-red-600 hover:text-red-500 transition-colors cursor-pointer"
                                                 >
-                                                    <DynamicIcon name="x" className="h-5 w-5" strokeWidth={2} />
+                                                    <DynamicIcon name="x" className="h-8 w-8" strokeWidth={2} />
                                                 </button>
                                             </div>
                                         ))}
