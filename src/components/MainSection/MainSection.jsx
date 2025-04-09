@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Heart, X } from 'lucide-react';
 
 const MainSection = () => {
     const [items, setItems] = useState([]);
+    const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
         fetch('/blogs.json')
@@ -9,6 +11,22 @@ const MainSection = () => {
             .then(data => setItems(data))
             .catch(error => console.error('Error fetching data:', error));
     }, []);
+
+    const toggleFavorite = (item) => {
+        const isFavorite = favorites.some(fav => fav.id === item.id);
+        if (isFavorite) {
+            setFavorites(favorites.filter(fav => fav.id !== item.id));
+        } else {
+            setFavorites([...favorites, item]);
+        }
+    };
+
+    const calculateTotalBids = () => {
+        return favorites.reduce((total, item) => {
+            const price = parseFloat(item.price.replace('$', '').replace(',', ''));
+            return total + price;
+        }, 0);
+    };
     return (
         <div className="bg-[#EBF0F5] py-16">
             <div className="w-11/12 mx-auto">
@@ -47,10 +65,15 @@ const MainSection = () => {
                                             <span className="text-blue-600 font-medium">{item.timeLeft}</span>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <button className="btn btn-ghost btn-circle hover:bg-gray-100">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600 hover:text-red-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                                </svg>
+                                            <button
+                                                onClick={() => toggleFavorite(item)}
+                                                className="btn btn-ghost btn-circle hover:bg-gray-100"
+                                            >
+                                                <Heart
+                                                    className={`h-6 w-6 transition-colors ${favorites.some(fav => fav.id === item.id) ? 'text-red-500 fill-current' : 'text-gray-600 hover:text-red-500'}`}
+                                                    fill={favorites.some(fav => fav.id === item.id) ? 'currentColor' : 'none'}
+                                                    strokeWidth={2}
+                                                />
                                             </button>
                                         </td>
                                     </tr>
@@ -63,19 +86,45 @@ const MainSection = () => {
                     <div className="lg:w-80">
                         <div className="bg-white rounded-lg p-6 shadow-sm sticky top-18">
                             <div className="flex items-center gap-2 mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                </svg>
+                                <Heart className="h-6 w-6" fill="none" strokeWidth={2} />
                                 <h3 className="text-xl font-semibold">Favorite Items</h3>
                             </div>
-                            <div className="text-center py-8">
-                                <p className="text-gray-600 mb-4">No favorites yet</p>
-                                <p className="text-sm text-gray-500">Click the heart icon on any item<br />to add it to your favorites</p>
+                            <div className="space-y-4">
+                                {favorites.length === 0 ? (
+                                    <div className="text-center py-8">
+                                        <p className="text-gray-600 mb-4">No favorites yet</p>
+                                        <p className="text-sm text-gray-500">Click the heart icon on any item<br />to add it to your favorites</p>
+                                    </div>
+                                ) : (
+                                    <div className="space-y-4">
+                                        {favorites.map((item) => (
+                                            <div key={item.id} className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
+                                                <div className="flex items-center gap-3">
+                                                    <img
+                                                        src={item.image}
+                                                        alt={item.name}
+                                                        className="w-12 h-12 object-cover rounded-md"
+                                                    />
+                                                    <div className="flex flex-col">
+                                                        <span className="text-sm font-medium">{item.name}</span>
+                                                        <span className="text-xs text-gray-500">{item.price}</span>
+                                                    </div>
+                                                </div>
+                                                <button
+                                                    onClick={() => toggleFavorite(item)}
+                                                    className="text-gray-400 hover:text-gray-600"
+                                                >
+                                                    <X className="h-5 w-5" strokeWidth={2} />
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                             <div className="border-t pt-4 mt-4">
                                 <div className="flex justify-between items-center">
                                     <span className="font-medium">Total bids Amount</span>
-                                    <span className="font-semibold">$0000</span>
+                                    <span className="font-semibold">${calculateTotalBids().toLocaleString()}</span>
                                 </div>
                             </div>
                         </div>
