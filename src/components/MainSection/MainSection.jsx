@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, X } from 'lucide-react';
+import { DynamicIcon } from 'lucide-react/dynamic';
 
 const MainSection = () => {
     const [items, setItems] = useState([]);
@@ -30,12 +30,13 @@ const MainSection = () => {
     return (
         <div className="bg-[#EBF0F5] py-16">
             <div className="w-11/12 mx-auto">
+                <div>
+                    <h2 className="text-3xl font-semibold mb-2">Active Auctions</h2>
+                    <p className="text-gray-600 mb-8">Discover and bid on extraordinary items</p>
+                </div>
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* Active Auctions Section */}
                     <div className="flex-1">
-                        <h2 className="text-3xl font-semibold mb-2">Active Auctions</h2>
-                        <p className="text-gray-600 mb-8">Discover and bid on extraordinary items</p>
-
                         <table id="item-table" className="w-full bg-white rounded-lg overflow-hidden shadow-md">
                             <thead>
                                 <tr className="bg-gray-50 text-sm text-gray-700 font-semibold">
@@ -69,7 +70,8 @@ const MainSection = () => {
                                                 onClick={() => toggleFavorite(item)}
                                                 className="btn btn-ghost btn-circle hover:bg-gray-100"
                                             >
-                                                <Heart
+                                                <DynamicIcon
+                                                    name="heart"
                                                     className={`h-6 w-6 transition-colors ${favorites.some(fav => fav.id === item.id) ? 'text-red-500 fill-current' : 'text-gray-600 hover:text-red-500'}`}
                                                     fill={favorites.some(fav => fav.id === item.id) ? 'currentColor' : 'none'}
                                                     strokeWidth={2}
@@ -83,10 +85,10 @@ const MainSection = () => {
                     </div>
 
                     {/* Favorite Items Card */}
-                    <div className="lg:w-80">
-                        <div className="bg-white rounded-lg p-6 shadow-sm sticky top-18">
+                    <div className="lg:w-96">
+                        <div className="bg-white rounded-lg p-6 shadow-sm sticky top-20">
                             <div className="flex items-center gap-2 mb-6">
-                                <Heart className="h-6 w-6" fill="none" strokeWidth={2} />
+                                <DynamicIcon name="heart" className="h-6 w-6 text-[#003EA4]" fill="none" strokeWidth={2} />
                                 <h3 className="text-xl font-semibold">Favorite Items</h3>
                             </div>
                             <div className="space-y-4">
@@ -96,35 +98,38 @@ const MainSection = () => {
                                         <p className="text-sm text-gray-500">Click the heart icon on any item<br />to add it to your favorites</p>
                                     </div>
                                 ) : (
-                                    <div className="space-y-4">
+                                    <div className="space-y-3">
                                         {favorites.map((item) => (
-                                            <div key={item.id} className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
+                                            <div key={item.id} className="flex items-center justify-between py-3 border-b last:border-b-0">
                                                 <div className="flex items-center gap-3">
                                                     <img
                                                         src={item.image}
                                                         alt={item.name}
-                                                        className="w-12 h-12 object-cover rounded-md"
+                                                        className="w-14 h-14 object-cover rounded-md"
                                                     />
                                                     <div className="flex flex-col">
-                                                        <span className="text-sm font-medium">{item.name}</span>
-                                                        <span className="text-xs text-gray-500">{item.price}</span>
+                                                        <span className="text-sm font-medium text-gray-800">{item.name}</span>
+                                                        <div className="flex items-center gap-2 mt-1">
+                                                            <span className="text-sm font-semibold">${item.price}</span>
+                                                            <span className="text-xs text-gray-500">Bids: 12</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <button
                                                     onClick={() => toggleFavorite(item)}
-                                                    className="text-gray-400 hover:text-gray-600"
+                                                    className="text-gray-400 hover:text-red-500 transition-colors"
                                                 >
-                                                    <X className="h-5 w-5" strokeWidth={2} />
+                                                    <DynamicIcon name="x" className="h-5 w-5" strokeWidth={2} />
                                                 </button>
                                             </div>
                                         ))}
                                     </div>
                                 )}
                             </div>
-                            <div className="border-t pt-4 mt-4">
+                            <div className="border-t mt-4 pt-4">
                                 <div className="flex justify-between items-center">
-                                    <span className="font-medium">Total bids Amount</span>
-                                    <span className="font-semibold">${calculateTotalBids().toLocaleString()}</span>
+                                    <span className="text-gray-800 font-medium">Total bids Amount</span>
+                                    <span className="text-lg font-semibold text-[#003EA4]">${calculateTotalBids().toLocaleString()}</span>
                                 </div>
                             </div>
                         </div>
