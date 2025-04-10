@@ -2,64 +2,71 @@
     {
         "id": 1,
         "title": "Vintage Leica M3 Camera",
+        "description": "Iconic 35mm rangefinder camera from the 1950s, known for exceptional build quality and optics",
         "currentBidPrice": "$3,250",
         "timeLeft": "6 Hours left",
-        "image": "https://i.ibb.co.com/8LV2Prd2/Bid1-min.png",
         "bidsCount": 12,
+        "image": "https://i.ibb.co.com/8LV2Prd2/Bid1-min.png",
         "isFavorite": false
     },
     {
         "id": 2,
         "title": "1965 Gibson SG Standard Electric Guitar",
+        "description": "Vintage electric guitar with cherry finish and dual humbucker pickups, played by rock legends",
         "currentBidPrice": "$4,750",
         "timeLeft": "1 Day left",
-        "image": "https://i.ibb.co.com/VWHzXngy/Bid2-min.png",
         "bidsCount": 18,
+        "image": "https://i.ibb.co.com/VWHzXngy/Bid2-min.png",
         "isFavorite": false
     },
     {
         "id": 3,
         "title": "Original Apple Macintosh 128K (1984)",
+        "description": "First mass-market personal computer with graphical user interface, revolutionized computing",
         "currentBidPrice": "$5,000",
         "timeLeft": "3 Days left",
-        "image": "https://i.ibb.co.com/0VmJx00X/Bid3-min.png",
         "bidsCount": 25,
+        "image": "https://i.ibb.co.com/0VmJx00X/Bid3-min.png",
         "isFavorite": false
     },
     {
         "id": 4,
         "title": "Rolex Submariner 16610",
+        "description": "Luxury Swiss dive watch with date function, stainless steel case and waterproof to 300 meters",
         "currentBidPrice": "$3,850",
         "timeLeft": "12 Hours left",
-        "image": "https://i.ibb.co.com/S71jYr4f/Bid4-min.png",
         "bidsCount": 15,
+        "image": "https://i.ibb.co.com/S71jYr4f/Bid4-min.png",
         "isFavorite": false
     },
     {
         "id": 5,
         "title": "First Edition \"The Great Gatsby\" by F. Scott Fitzgerald",
+        "description": "Rare 1925 first printing of the American literary classic with original dust jacket",
         "currentBidPrice": "$2,100",
         "timeLeft": "4 Days left",
-        "image": "https://i.ibb.co.com/39LzH7TN/Bid5-min.png",
         "bidsCount": 8,
+        "image": "https://i.ibb.co.com/39LzH7TN/Bid5-min.png",
         "isFavorite": false
     },
     {
         "id": 6,
         "title": "Mid-Century Modern Eames Lounge Chair",
+        "description": "Iconic 1956 Herman Miller chair designed by Charles and Ray Eames, rosewood veneer with black leather",
         "currentBidPrice": "$1,950",
         "timeLeft": "2 Days left",
-        "image": "https://i.ibb.co.com/9dqBgWv/Bid6-min.png",
         "bidsCount": 10,
+        "image": "https://i.ibb.co.com/9dqBgWv/Bid6-min.png",
         "isFavorite": false
     },
     {
         "id": 7,
         "title": "Banksy Original Screen Print",
+        "description": "Limited edition authenticated artwork by the elusive street artist, signed and numbered",
         "currentBidPrice": "$1,500",
         "timeLeft": "5 Hours left",
-        "image": "https://i.ibb.co.com/SwZtw9Kj/Bid7-min.png",
         "bidsCount": 20,
+        "image": "https://i.ibb.co.com/SwZtw9Kj/Bid7-min.png",
         "isFavorite": false
     }
 ]
