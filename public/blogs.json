@@ -2,47 +2,47 @@
     {
         "id": 1,
         "name": "Vintage Leica M3 Camera",
-        "price": "$2,850",
-        "timeLeft": "2 Days left",
+        "price": "$3,250",
+        "timeLeft": "6 Hours left",
         "image": "https://i.ibb.co.com/8LV2Prd2/Bid1-min.png",
         "isFavorite": false
     },
     {
         "id": 2,
         "name": "1965 Gibson SG Standard Electric Guitar",
-        "price": "$2,850",
-        "timeLeft": "2 Days left",
+        "price": "$4,750",
+        "timeLeft": "1 Day left",
         "image": "https://i.ibb.co.com/VWHzXngy/Bid2-min.png",
         "isFavorite": false
     },
     {
         "id": 3,
         "name": "Original Apple Macintosh 128K (1984)",
-        "price": "$2,850",
-        "timeLeft": "2 Days left",
+        "price": "$5,000",
+        "timeLeft": "3 Days left",
         "image": "https://i.ibb.co.com/0VmJx00X/Bid3-min.png",
         "isFavorite": false
     },
     {
         "id": 4,
         "name": "Rolex Submariner 16610",
-        "price": "$2,850",
-        "timeLeft": "2 Days left",
+        "price": "$3,850",
+        "timeLeft": "12 Hours left",
         "image": "https://i.ibb.co.com/S71jYr4f/Bid4-min.png",
         "isFavorite": false
     },
     {
         "id": 5,
         "name": "First Edition \"The Great Gatsby\" by F. Scott Fitzgerald",
-        "price": "$2,850",
-        "timeLeft": "2 Days left",
+        "price": "$2,100",
+        "timeLeft": "4 Days left",
         "image": "https://i.ibb.co.com/39LzH7TN/Bid5-min.png",
         "isFavorite": false
     },
     {
         "id": 6,
         "name": "Mid-Century Modern Eames Lounge Chair",
-        "price": "$2,850",
+        "price": "$1,950",
         "timeLeft": "2 Days left",
         "image": "https://i.ibb.co.com/9dqBgWv/Bid6-min.png",
         "isFavorite": false
@@ -50,8 +50,8 @@
     {
         "id": 7,
         "name": "Banksy Original Screen Print",
-        "price": "$2,850",
-        "timeLeft": "2 Days left",
+        "price": "$1,500",
+        "timeLeft": "5 Hours left",
         "image": "https://i.ibb.co.com/SwZtw9Kj/Bid7-min.png",
         "isFavorite": false
     }
