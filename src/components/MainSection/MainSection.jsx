@@ -10,17 +10,16 @@ const MainSection = () => {
         fetch('/blogs.json')
             .then(res => res.json())
             .then(data => setItems(data))
-            .catch(error => console.error('Error fetching data:', error));
     }, []);
 
     const toggleFavorite = (item) => {
         const isFavorite = favorites.some(fav => fav.id === item.id);
         if (isFavorite) {
             setFavorites(favorites.filter(fav => fav.id !== item.id));
-            toast.error('Item removed from favorites');
+            toast.error('Item removed from your favorite list');
         } else {
             setFavorites([...favorites, item]);
-            toast.success('Item added to favorites');
+            toast.success('Item added to your favorite list');
         }
     };
 
@@ -74,7 +73,7 @@ const MainSection = () => {
                                                 <button
                                                     onClick={() => !favorites.some(fav => fav.id === item.id) && toggleFavorite(item)}
                                                     className={`btn btn-ghost btn-circle ${favorites.some(fav => fav.id === item.id)
-                                                            ? 'opacity-50'
+                                                            ? ''
                                                             : 'hover:bg-gray-100'
                                                         }`}
                                                     disabled={favorites.some(fav => fav.id === item.id)}
@@ -123,7 +122,7 @@ const MainSection = () => {
                                                     <div className="flex flex-col">
                                                         <span className="text-sm font-medium text-gray-800">{item.name}</span>
                                                         <div className="flex items-center gap-2 mt-1">
-                                                            <span className="text-sm font-semibold">${item.price}</span>
+                                                            <span className="text-sm font-semibold">{item.price}</span>
                                                             <span className="text-xs text-gray-500">Bids: 12</span>
                                                         </div>
                                                     </div>
