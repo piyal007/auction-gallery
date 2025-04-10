@@ -123,15 +123,15 @@ const MainSection = () => {
                                                         <span className="text-sm font-medium text-gray-800">{item.name}</span>
                                                         <div className="flex items-center gap-2 mt-1">
                                                             <span className="text-sm font-semibold">{item.price}</span>
-                                                            <span className="text-xs text-gray-500">Bids: 12</span>
+                                                            <span className="text-xs text-gray-500">{item.bids}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <button
                                                     onClick={() => toggleFavorite(item)}
-                                                    className="text-red-600 hover:text-red-500 transition-colors cursor-pointer"
+                                                    className="text-gray-500 hover:text-red-500 transition-colors cursor-pointer"
                                                 >
-                                                    <DynamicIcon name="x" className="h-8 w-8" strokeWidth={2} />
+                                                    <DynamicIcon name="x" className="h-6 w-6" strokeWidth={2} />
                                                 </button>
                                             </div>
                                         ))}

@@ -5,6 +5,7 @@
         "price": "$3,250",
         "timeLeft": "6 Hours left",
         "image": "https://i.ibb.co.com/8LV2Prd2/Bid1-min.png",
+        "bids": 12,
         "isFavorite": false
     },
     {
@@ -13,6 +14,7 @@
         "price": "$4,750",
         "timeLeft": "1 Day left",
         "image": "https://i.ibb.co.com/VWHzXngy/Bid2-min.png",
+        "bids": 18,
         "isFavorite": false
     },
     {
@@ -21,6 +23,7 @@
         "price": "$5,000",
         "timeLeft": "3 Days left",
         "image": "https://i.ibb.co.com/0VmJx00X/Bid3-min.png",
+        "bids": 25,
         "isFavorite": false
     },
     {
@@ -29,6 +32,7 @@
         "price": "$3,850",
         "timeLeft": "12 Hours left",
         "image": "https://i.ibb.co.com/S71jYr4f/Bid4-min.png",
+        "bids": 15,
         "isFavorite": false
     },
     {
@@ -37,6 +41,7 @@
         "price": "$2,100",
         "timeLeft": "4 Days left",
         "image": "https://i.ibb.co.com/39LzH7TN/Bid5-min.png",
+        "bids": 8,
         "isFavorite": false
     },
     {
@@ -45,6 +50,7 @@
         "price": "$1,950",
         "timeLeft": "2 Days left",
         "image": "https://i.ibb.co.com/9dqBgWv/Bid6-min.png",
+        "bids": 10,
         "isFavorite": false
     },
     {
@@ -53,6 +59,7 @@
         "price": "$1,500",
         "timeLeft": "5 Hours left",
         "image": "https://i.ibb.co.com/SwZtw9Kj/Bid7-min.png",
+        "bids": 20,
         "isFavorite": false
     }
 ]
