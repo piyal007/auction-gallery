@@ -123,7 +123,7 @@ const MainSection = () => {
                                                         <span className="text-sm font-medium text-gray-800">{item.name}</span>
                                                         <div className="flex items-center gap-2 mt-1">
                                                             <span className="text-sm font-semibold">{item.price}</span>
-                                                            <span className="text-xs text-gray-500">{item.bids}</span>
+                                                            <span className="text-xs text-gray-500">Bids: {item.bids}</span>
                                                         </div>
                                                     </div>
                                                 </div>
