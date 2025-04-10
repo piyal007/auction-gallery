@@ -25,7 +25,7 @@ const MainSection = () => {
 
     const calculateTotalBids = () => {
         return favorites.reduce((total, item) => {
-            const price = parseFloat(item.price.replace('$', '').replace(',', ''));
+            const price = parseFloat(item.currentBidPrice.replace('$', '').replace(',', ''));
             return total + price;
         }, 0);
     };
@@ -56,14 +56,14 @@ const MainSection = () => {
                                             <div className="flex items-center gap-4">
                                                 <img
                                                     src={item.image}
-                                                    alt={item.name}
+                                                    alt={item.title}
                                                     className="w-20 h-20 object-cover rounded-lg shadow-sm"
                                                 />
-                                                <span className="font-medium text-gray-800">{item.name}</span>
+                                                <span className="font-medium text-gray-800">{item.title}</span>
                                             </div>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <span className="font-semibold text-gray-900">{item.price}</span>
+                                            <span className="font-semibold text-gray-900">{item.currentBidPrice}</span>
                                         </td>
                                         <td className="px-6 py-4">
                                             <span className="text-blue-600 font-medium">{item.timeLeft}</span>
@@ -116,14 +116,14 @@ const MainSection = () => {
                                                 <div className="flex items-center gap-3">
                                                     <img
                                                         src={item.image}
-                                                        alt={item.name}
+                                                        alt={item.title}
                                                         className="w-14 h-14 object-cover rounded-md"
                                                     />
                                                     <div className="flex flex-col">
-                                                        <span className="text-sm font-medium text-gray-800">{item.name}</span>
+                                                        <span className="text-sm font-medium text-gray-800">{item.title}</span>
                                                         <div className="flex items-center gap-2 mt-1">
-                                                            <span className="text-sm font-semibold">{item.price}</span>
-                                                            <span className="text-xs text-gray-500">Bids: {item.bids}</span>
+                                                            <span className="text-sm font-semibold">{item.currentBidPrice}</span>
+                                                            <span className="text-xs text-gray-500">Bids: {item.bidsCount}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -131,7 +131,7 @@ const MainSection = () => {
                                                     onClick={() => toggleFavorite(item)}
                                                     className="text-gray-500 hover:text-red-500 transition-colors cursor-pointer"
                                                 >
-                                                    <DynamicIcon name="x" className="h-6 w-6" strokeWidth={2} />
+                                                    <DynamicIcon name="x" className="h-7 w-7" strokeWidth={2} />
                                                 </button>
                                             </div>
                                         ))}
