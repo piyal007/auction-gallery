@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DynamicIcon } from 'lucide-react/dynamic';
-import { ToastContainer, toast } from 'react-toastify';
+import { Bounce, Flip, Slide, ToastContainer, toast } from 'react-toastify';
 
 const MainSection = () => {
     const [items, setItems] = useState([]);
@@ -31,7 +31,7 @@ const MainSection = () => {
     };
     return (
         <div className="bg-[#EBF0F5] py-16">
-            <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} closeOnClick pauseOnHover theme="light" />
+            <ToastContainer position="top-right" autoClose={3000} transition={Slide} hideProgressBar={false} closeOnClick pauseOnHover theme="dark" />
             <div className="w-11/12 mx-auto">
                 <div>
                     <h2 className="text-3xl font-semibold mb-2">Active Auctions</h2>
