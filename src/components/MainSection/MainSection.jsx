@@ -7,7 +7,7 @@ const MainSection = () => {
     const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
-        fetch('/blogs.json')
+        fetch('/data.json')
             .then(res => res.json())
             .then(data => setItems(data))
     }, []);

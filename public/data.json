@@ -6,8 +6,7 @@
         "currentBidPrice": "$3,250",
         "timeLeft": "6 Hours left",
         "bidsCount": 12,
-        "image": "https://i.ibb.co.com/8LV2Prd2/Bid1-min.png",
-        "isFavorite": false
+        "image": "https://i.ibb.co.com/8LV2Prd2/Bid1-min.png"
     },
     {
         "id": 2,
@@ -16,8 +15,7 @@
         "currentBidPrice": "$4,750",
         "timeLeft": "1 Day left",
         "bidsCount": 18,
-        "image": "https://i.ibb.co.com/VWHzXngy/Bid2-min.png",
-        "isFavorite": false
+        "image": "https://i.ibb.co.com/VWHzXngy/Bid2-min.png"
     },
     {
         "id": 3,
@@ -26,8 +24,7 @@
         "currentBidPrice": "$5,000",
         "timeLeft": "3 Days left",
         "bidsCount": 25,
-        "image": "https://i.ibb.co.com/0VmJx00X/Bid3-min.png",
-        "isFavorite": false
+        "image": "https://i.ibb.co.com/0VmJx00X/Bid3-min.png"
     },
     {
         "id": 4,
@@ -36,8 +33,7 @@
         "currentBidPrice": "$3,850",
         "timeLeft": "12 Hours left",
         "bidsCount": 15,
-        "image": "https://i.ibb.co.com/S71jYr4f/Bid4-min.png",
-        "isFavorite": false
+        "image": "https://i.ibb.co.com/S71jYr4f/Bid4-min.png"
     },
     {
         "id": 5,
@@ -46,8 +42,7 @@
         "currentBidPrice": "$2,100",
         "timeLeft": "4 Days left",
         "bidsCount": 8,
-        "image": "https://i.ibb.co.com/39LzH7TN/Bid5-min.png",
-        "isFavorite": false
+        "image": "https://i.ibb.co.com/39LzH7TN/Bid5-min.png"
     },
     {
         "id": 6,
@@ -56,8 +51,7 @@
         "currentBidPrice": "$1,950",
         "timeLeft": "2 Days left",
         "bidsCount": 10,
-        "image": "https://i.ibb.co.com/9dqBgWv/Bid6-min.png",
-        "isFavorite": false
+        "image": "https://i.ibb.co.com/9dqBgWv/Bid6-min.png"
     },
     {
         "id": 7,
@@ -66,7 +60,6 @@
         "currentBidPrice": "$1,500",
         "timeLeft": "5 Hours left",
         "bidsCount": 20,
-        "image": "https://i.ibb.co.com/SwZtw9Kj/Bid7-min.png",
-        "isFavorite": false
+        "image": "https://i.ibb.co.com/SwZtw9Kj/Bid7-min.png"
     }
 ]
