@@ -1,12 +1,75 @@
-# React + Vite
+## Auction Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern auction listing UI built with React, Vite, Tailwind CSS, and DaisyUI. Browse active auctions from a local dataset, add items to your favorites, and see a running total of your bid amounts with slick interactions and toasts.
 
-Currently, two official plugins are available:
+- **Live Demo**: [phero-assignment7.netlify.app](https://phero-assignment7.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
+- **Active auctions table**: Image, title, current bid, and time left
+- **Favorites with heart toggle**: Add/remove items; button disables once added
+- **Total bids amount**: Auto-calculated sum of favorites in the side card
+- **Toasts and animations**: User feedback with React Toastify and subtle UI motion
+- **Responsive layout**: Sticky navbar and sticky favorites panel on large screens
 
-## Expanding the ESLint configuration
+### Tech Stack
+- **Frontend**: React 19 + Vite 6
+- **Styling**: Tailwind CSS 4 + DaisyUI
+- **Icons**: lucide-react (dynamic import)
+- **Notifications**: react-toastify
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Getting Started
+Prerequisites:
+- Node.js >= 18 and npm
+
+Install and run locally:
+
+```bash
+npm install
+npm run dev
+```
+
+Build and preview production:
+
+```bash
+npm run build
+npm run preview
+```
+
+### Project Structure
+```text
+Assignment7/
+  public/
+    data.json           # Auction items dataset served statically
+  src/
+    components/
+      Navbar/           # Sticky top navigation
+      Banner/           # Hero banner
+      MainSection/      # Auctions table + Favorites card + Totals
+      Footer/           # Footer
+    App.jsx
+    main.jsx
+  index.html
+  tailwind.config.js
+  vite.config.js
+```
+
+### Data
+The app fetches auction items from `public/data.json` at runtime (`/data.json`). Update this file to change items, prices, and images.
+
+### Available Scripts
+- `npm run dev`: Start dev server
+- `npm run build`: Production build
+- `npm run preview`: Preview built app
+- `npm run lint`: Lint source files
+
+### Deployment
+Any static host works. Example with Netlify:
+1) `npm run build`
+2) Deploy the `dist/` folder to Netlify (drag-and-drop or connect repo with build command `npm run build`).
+
+### Acknowledgements
+- Tailwind CSS + DaisyUI for fast, accessible components
+- lucide-react for icons
+- react-toastify for unobtrusive notifications
+
+
